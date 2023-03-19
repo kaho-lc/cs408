@@ -57,8 +57,45 @@ bool ListDelete(sqllist &L, int i, ElemType &e)
     {
         L.data[j] = L.data[j + 1];
     }
-    
+
     L.length--;
 
     return true;
+}
+
+// 按值查找
+int locateElem(sqllist &L, ElemType e)
+{
+    for (int i = 0; i < L.length; i++)
+    {
+        if (L.data[i] == e)
+        {
+            return i + 1;
+        }
+    }
+}
+
+// 按位查找
+ElemType getElem(sqllist &L, int index)
+{
+    if (index < 1 || index > L.length)
+    {
+        /* code */
+        printf("查找的位序非法");
+        return;
+    }
+
+    return L.data[index - 1];
+}
+
+// 获取顺序表的长度
+int getLength(sqllist &L)
+{
+    return L.length;
+}
+
+// 判断顺序表是否为空
+bool isEmpty(sqllist &L)
+{
+    return L.length == 0;
 }
