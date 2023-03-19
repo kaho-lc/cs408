@@ -44,3 +44,21 @@ bool ListInsert(sqllist &L, int i, ElemType e)
     L.length++;
     return true;
 }
+
+// 删除指定位置的元素，并将删除的元素返回
+bool ListDelete(sqllist &L, int i, ElemType &e)
+{
+    if (i < 1 || i > L.length) // 判断要删除的位置是否合法
+    {
+        return false;
+    }
+    e = L.data[i - 1]; // 将要删除的元素返回
+    for (int j = i - 1; j <= L.length; j++)
+    {
+        L.data[j] = L.data[j + 1];
+    }
+    
+    L.length--;
+
+    return true;
+}
