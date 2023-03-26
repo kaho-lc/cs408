@@ -37,7 +37,15 @@ LNode *GetElem(LinkedList &L, int i) {
   }
   return p;
 }
-
+// 按值查找
+LNode *GetElemByValue(LinkedList L , ElemType e) {
+  // 定义一个执政p指向首元节点
+  LNode *p = L->next;
+  while (p != NULL && p->data != e) {
+    p = p->next;
+  }
+  return p;
+}
 
 // 在位置i处插入节点，节点值为e
 bool ListInsert(LinkedList &L, int i, ElemType e) {
@@ -72,7 +80,7 @@ bool ListDelete(LinkedList &L, int i, int &e) {
   e = p->data;
   // 将要删除节点的前一个节点的next指针指向要删除节点的next节点
   prior->next = p->next;
-  
+
   return true;
 }
 
