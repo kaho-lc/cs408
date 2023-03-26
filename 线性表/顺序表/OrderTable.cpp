@@ -1,8 +1,9 @@
-#include <stdio.h>
+     #include <stdio.h>
 #include <stdbool.h>
 
-#define MaxSize 20 // 定义顺序表的最大容量
+#define       MaxSize 20 // 定义顺序表的最大容量
 typedef int ElemType;
+
 
 typedef struct
 {
@@ -73,6 +74,8 @@ int locateElem(sqllist &L, ElemType e)
             return i + 1;
         }
     }
+  //如果查找不到的话，就返回-1
+  return -1;
 }
 
 // 按位查找
@@ -82,7 +85,8 @@ ElemType getElem(sqllist &L, int index)
     {
         /* code */
         printf("查找的位序非法");
-        return;
+    //如果查找不到的话，就返回-1
+        return -1;
     }
 
     return L.data[index - 1];

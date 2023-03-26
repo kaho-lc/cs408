@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 typedef int ElemType;
@@ -21,7 +22,7 @@ bool initList(LinkedList L)
     return true;
 }
 
-// 头插法建立单链表
+//todo 头插法建立单链表
 LinkedList List_HeadInsert(LinkedList &L)
 {
 
