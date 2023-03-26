@@ -38,7 +38,7 @@ LNode *GetElem(LinkedList &L, int i) {
   return p;
 }
 // 按值查找
-LNode *GetElemByValue(LinkedList L , ElemType e) {
+LNode *GetElemByValue(LinkedList L, ElemType e) {
   // 定义一个执政p指向首元节点
   LNode *p = L->next;
   while (p != NULL && p->data != e) {
@@ -92,13 +92,13 @@ int getLength(LinkedList &L) {
   }
 
   LNode *p = L;
-  int k = 0;
+  int len = 0;
   while (p->next != NULL) {
-    k++;
+    len++;
     p = p->next;
   }
 
-  return k;
+  return len;
 }
 
 int main() {
