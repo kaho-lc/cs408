@@ -21,4 +21,5 @@ bool InitCSLinked(CSLinked L) {
   }
   L->next = L;
   return true;
+
 }
