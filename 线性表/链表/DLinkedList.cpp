@@ -78,7 +78,6 @@ void DestoryDList(DLinkedList &L) {
 }
 // 遍历双向链表
 void TraversalDList(DLinkedList &L) {
-
   while (L != NULL) {
     printf("%d", L->data);
     L = L->next;
