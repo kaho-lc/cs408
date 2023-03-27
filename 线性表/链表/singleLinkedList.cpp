@@ -1,4 +1,3 @@
-#include <corecrt_malloc.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -151,10 +150,4 @@ int getLength(LinkedList &L) {
   }
 
   return len;
-}
-
-int main() {
-  LinkedList L;
-  initList(L);
-  return 0;
 }
