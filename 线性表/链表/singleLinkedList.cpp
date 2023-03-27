@@ -141,7 +141,6 @@ int getLength(LinkedList &L) {
   if (L->next == NULL) {
     return 0;
   }
-
   LNode *p = L;
   int len = 0;
   while (p->next != NULL) {
