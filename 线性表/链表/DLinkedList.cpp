@@ -1,5 +1,4 @@
 // 双向链表
-#include <corecrt_malloc.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,14 +63,8 @@ bool DeleteNextNode(DNode *p) {
   return true;
 }
 // 判断双向链表是否为空表
-bool isEmpty(DLinkedList &L) {
+bool isEmpty(DLinkedList &L) { return L->next == NULL; }
 
-  if (L->next == NULL) {
-    return true;
-  } else {
-    return false;
-  }
-}
 // 销毁双向链表
 void DestoryDList(DLinkedList &L) {
   while (L->next != NULL) {
@@ -82,4 +75,12 @@ void DestoryDList(DLinkedList &L) {
   free(L);
   // 重新将头指针L指向null
   L = NULL;
+}
+// 遍历双向链表
+void TraversalDList(DLinkedList &L) {
+
+  while (L != NULL) {
+    printf("%d", L->data);
+    L = L->next;
+  }
 }
