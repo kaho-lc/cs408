@@ -42,24 +42,24 @@ bool InsertNextDNode(DNode *p, DNode *s) {
   return true;
 }
 
-//删除p节点的后继节点
-bool DeleteNextNode(DNode *p){
-  //非法传参
+// 删除p节点的后继节点
+bool DeleteNextNode(DNode *p) {
+  // 非法传参
   if (p == NULL) {
-   return false; 
+    return false;
   }
-  //保存p的下一个节点
+  // 保存p的下一个节点
   DNode *s = p->next;
-  //如果p没有下一个节点，则直接返回false
+  // 如果p没有下一个节点，则直接返回false
   if (s == NULL) {
     return false;
   }
   p->next = s->next;
-  //如果s节点的存在下一个节点的话,就将其prior指针指向p
+  // 如果s节点的存在下一个节点的话,就将其prior指针指向p
   if (s->next != NULL) {
-   s->next->prior = p; 
+    s->next->prior = p;
   }
-  //释放p的下一个节点s
+  // 释放p的下一个节点s
   free(s);
   return true;
 }
@@ -72,11 +72,14 @@ bool isEmpty(DLinkedList &L) {
     return false;
   }
 }
-//销毁双向链表
-void DestoryDList(DLinkedList &L){
-  while (L->next = NULL)
-  {
-  //删除当前节点的后面节点  
+// 销毁双向链表
+void DestoryDList(DLinkedList &L) {
+  while (L->next != NULL) {
+    // 删除当前节点的后面节点
+    DeleteNextNode(L);
   }
+  // 释放头指针L指向的头节点
+  free(L);
+  // 重新将头指针L指向null
+  L = NULL;
 }
-int main() { return 0; }
