@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef int ElemType;
 // 定义链表节点
 typedef struct LNode {
@@ -25,6 +26,7 @@ bool initList(LinkedList L) {
 LinkedList List_HeadInsert(LinkedList &L) {
   // 为头节点分配空间
   L = (LNode *)malloc(sizeof(LNode));
+  //将头节点的next指针置空
   L->next = NULL;
   LNode *s;
   int x;
@@ -38,29 +40,34 @@ LinkedList List_HeadInsert(LinkedList &L) {
     L->next = s;
     scanf("%d", &x);
   }
-
   // 将创建的单链表返回
   return L;
 }
 
-// todo 尾插法建立单链表
+//  尾插法建立单链表
 LinkedList List_TailInsert(LinkedList &L) {
   // 给头节点分配空间
   L = (LNode *)malloc(sizeof(LNode));
   // 使用x来接收输入的值
   int x;
+  //定义待插入的节点
   LNode *s;
   // 定义一个尾指针，初始情况下，尾指针等于头指针
   LNode *tail;
+  //获取用户输入
   scanf("%d", &x);
+
   while (x != 9999) {
     // 为s分配一个空间
     s = (LNode *)malloc(sizeof(LNode));
+
     s->data = x;
+
     // 将s节点插入到当前尾节点的后面
     tail->next = s;
     // 将尾指针指向当前新增的节点
     tail = s;
+    //继续获取用户输入
     scanf("%d", &x);
   }
   // 将尾节点的下一个节点制空
