@@ -19,7 +19,7 @@ bool InitCSLinked(CSLinked L) {
   if (L == NULL) {
     return false;
   }
+  //让头节点的next指针还指向自己
   L->next = L;
   return true;
-
 }
