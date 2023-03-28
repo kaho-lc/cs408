@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef int ElementType;
 
 typedef struct DNode {
@@ -49,4 +48,5 @@ bool DeleteNode(DNode *p, DNode *s) {
     s->next->prior = p;
   }
   free(s);
+  return true;
 }
